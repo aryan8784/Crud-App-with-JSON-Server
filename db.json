@@ -1,14 +1,19 @@
 {
   "users": [
     {
-      "name": "Aryan",
+      "name": "Aryan malik",
       "email": "aryanmali@gmail.com",
       "id": 4
     },
     {
-      "name": "asdas",
-      "email": "asdasd@dsfs",
+      "name": "mobeen",
+      "email": "mobeen@gmail.com",
       "id": 5
+    },
+    {
+      "name": "adsas",
+      "email": "akmadwwl@gmail.com",
+      "id": 7
     }
   ]
 }

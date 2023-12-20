@@ -15,16 +15,20 @@ const Home = () => {
       .get("http://localhost:3000/users")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, [data]);
+  }, []);
 
-  const handleDelete = (id) => {
-  const confirm =  window.confirm("Do you Like to delete?");
+  const handleDelete = async (id) => {
+    const confirm = window.confirm("Do you like to delete?");
 
     if (confirm) {
-      axios.delete("http://localhost:3000/users/" + id).then((res) => {
-        Swal.fire("Data Successfully Delete!");
-        navigate("/");
-      });
+      try {
+        await axios.delete(`http://localhost:3000/users/${id}`);
+        Swal.fire("Data Successfully Deleted!");
+        const updatedData = data.filter((user) => user.id !== id);
+        setData(updatedData);
+      } catch (error) {
+        console.error("Error deleting user:", error);
+      }
     }
   };
 
